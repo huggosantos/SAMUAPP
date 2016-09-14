@@ -1,6 +1,6 @@
 {
-  "name": "My App",
-  "description": "Description of your app",
+  "name": "SAMU",
+  "description": "Realizar Chamados Emergênciais",
   "launch_path": "www/index.html",
   "icons": {
     "128": "/img/logo.png"
