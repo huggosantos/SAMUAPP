@@ -1,8 +1,7 @@
 <h5>Chamada Emerêncial</h5>
 
    <div class="row" >
-
-      <form class="col s12" id="formChamado" ng-submit="salveSubmit()">
+      <form class="col s12" id="formChamado" name="formChamado" ng-submit="salveSubmit()">
         <div class="row">
           <div class="input-field col s6">
             <input id="nome" type="text" class="validate" ng-model="chamado.nome" ng-required="true">
@@ -15,20 +14,20 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input  id="disabled" type="text" class="validate">
-            <label for="disabled">Endereço</label>
+            <input  id="endereco" type="text" class="validate">
+            <label for="endereco">Endereço</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input id="password" type="password" class="validate">
-            <label for="password">Ponto de Referência</label>
+            <input id="ref" type="text" class="validate">
+            <label for="ref">Ponto de Referência</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input id="email" type="email" class="validate">
-            <label for="email">Telefone</label>
+            <input id="telefone" type="number" class="validate">
+            <label for="telefone">Telefone</label>
           </div>
         </div>
 
@@ -38,15 +37,15 @@
             <tbody>
               <tr>
                 <td> Capturar imagem do Acidente</td>
-                <td> <a  onclick="capturarImagem();"  class="waves-effect waves-circle waves-red btn-floating secondary-content red"><i class="material-icons">photo</i></a>
+                <td> <a  onclick="var x = capturarImagem();"  class="waves-effect waves-circle waves-red btn-floating secondary-content red"><i class="material-icons">photo</i></a>
                 </td>
               </tr>
             </tbody>
        </table> 
        <div >
-         <img id="htmlImagem" class="responsive-img" ng-model="chamado.htmlImagem"></img>
+         <img id="htmlImagem"  class="responsive-img" ng-model="chamado.htmlImagem"/>
        </div>
-       <button class="btn waves-effect waves-light red " type="submit" name="action" ng-click="enviarForm(chamado)" ng-disabled="!chamado.nome ">Enviar
+       <button class="btn waves-effect waves-light red " type="submit" name="action" ng-click="enviarForm(chamado)" ng-disabled="!formChamado.$valid">Enviar
            <i class="material-icons right">send</i>
        </button>
  

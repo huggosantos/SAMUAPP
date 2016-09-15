@@ -1,7 +1,7 @@
 function capturarImagem(){
-         navigator.camera.getPicture(onSuccess, onFail,
+   navigator.camera.getPicture(onSuccess, onFail,
                     {
-                        destinationType : Camera.DestinationType.DATA_,
+                        destinationType : Camera.DestinationType.FILE_URI,
                         sourceType : Camera.PictureSourceType.CAMERA
                     }
                 );
@@ -10,7 +10,8 @@ function capturarImagem(){
             function onSuccess(imageURL) {
                 var image = document.getElementById('htmlImagem');
                 image.src = imageURL;
-                image.innerHTML = imageURL;
+                console.log(image);
+                
             }
 
             function onFail(message) {
