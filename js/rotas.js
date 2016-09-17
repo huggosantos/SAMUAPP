@@ -33,8 +33,8 @@ app.controller('helow', function($scope) {
 }
 
 function onSuccess(imageData) {
-  var image = document.getElementById('htmlImagem');
-  imgEnviar = image.src = "data:image/jpeg;base64," + imageData;
+    document.getElementById('htmlImagem').src;
+    imgEnviar=imageData;
 }
 
 function onFail(message) {
@@ -45,7 +45,8 @@ function onFail(message) {
   $scope.enviarForm = function(chamado){
    
    // console.log($scope.chamado.htmlImagem);
- //alert(imgEnviar);
+ alert(imgEnviar);
+  alert();
 
     $http({
         url: 'https://modulosamu.herokuapp.com/chamado/store',
@@ -72,7 +73,7 @@ function onFail(message) {
         $scope.error = true;
         
       }); 
- alert(JSON.stringify(imgEnviar));
+
   }
   
     });
