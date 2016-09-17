@@ -16,9 +16,6 @@ app.config(function($routeProvider) {
     //FastClick.attach(document.body);
 });
 
-app.controller('helow', function($scope) {
- //$scope.mensagem = "teste pohha";
-});
 
  app.controller('formularioChamado', function($scope, $http) {
 //----------------------------camera------------------------------------------
@@ -33,9 +30,9 @@ app.controller('helow', function($scope) {
 }
 
 function onSuccess(imageData) {
+
   var image = document.getElementById('htmlImagem');
   imgEnviar = image.src = "data:image/jpeg;base64," + imageData ;
-  alert(image);
 }
 
 function onFail(message) {
@@ -46,8 +43,6 @@ function onFail(message) {
   $scope.enviarForm = function(chamado){
    
    // console.log($scope.chamado.htmlImagem);
-  alert(imgEnviar);
-
 
     $http({
         url: 'https://modulosamu.herokuapp.com/chamado/store',
