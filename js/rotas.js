@@ -24,16 +24,16 @@ app.controller('helow', function($scope) {
   
   $scope.enviarForm = function(chamado){
    
-    console.log($scope.chamado.htmlImagem);
+    //console.log($scope.chamado.htmlImagem);
 
 
     $http({
-        url: 'mail.php',
+        url: 'https://modulosamu.herokuapp.com/chamado/store',
         method: 'POST',
         data: {
           'nome': $scope.chamado.nome,
-          'email': $scope.chamado.email,
-          'mensagem': $scope.chamado.email,
+          'sobrenome': $scope.chamado.sobrenome,
+         
           
         },
         headers: {
@@ -45,7 +45,7 @@ app.controller('helow', function($scope) {
       }).
       success(function (data) {
         $scope.success = true;
-        //exemplo de retorno: alert(data['email']);
+          alert(data);
         $scope.user = {};
       }).
       error(function (data) {
