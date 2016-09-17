@@ -20,20 +20,16 @@ app.config(function($routeProvider) {
  app.controller('formularioChamado', function($scope, $http) {
 //----------------------------camera------------------------------------------
   var imgEnviar;
-  function capturarImagem(){
-     navigator.camera.getPicture(onSuccess, onFail,
+  navigator.camera.getPicture(onSuccess, onFail,
   {
-    destinationType : Camera.DestinationType.DATA_URL,
+    destinationType : Camera.DestinationType.FILE_URI,
     sourceType : Camera.PictureSourceType.CAMERA
   }
-  );
-}
+);
 
-function onSuccess(imageData) {
-
+function onSuccess(imageURL) {
   var image = document.getElementById('htmlImagem');
-  image.src = "data:image/jpeg;base64," + imageData ;
-  alert(image);
+  image.src = imageURL;
 }
 
 function onFail(message) {
