@@ -1,17 +1,15 @@
 function capturarImagem(){
    navigator.camera.getPicture(onSuccess, onFail,
                     {
-                        destinationType : Camera.DestinationType.FILE_URI,
+                        destinationType : Camera.DestinationType.DATA_URL,
                         sourceType : Camera.PictureSourceType.CAMERA
                     }
                 );
             }
 
-            function onSuccess(imageURL) {
+           function onSuccess(imageData) {
                 var image = document.getElementById('htmlImagem');
-                image.src = imageURL;
-                console.log(image);
-                
+                image.src = "data:image/jpeg;base64," + imageData;
             }
 
             function onFail(message) {
