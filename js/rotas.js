@@ -1,4 +1,4 @@
-var app = angular.module('MyApp', ['ngRoute']);
+var app = angular.module('MyApp', ['ngRoute'], ['base64']);
 
 app.config(function($routeProvider) {
         /*ROTAS*/
@@ -33,8 +33,8 @@ app.controller('helow', function($scope) {
 }
 
 function onSuccess(imageData) {
-    document.getElementById('htmlImagem').src;
-    imgEnviar=imageData;
+  var image = document.getElementById('htmlImagem');
+  imgEnviar = image.src = "data:image/jpeg;base64," + imageData ;
 }
 
 function onFail(message) {
@@ -45,8 +45,8 @@ function onFail(message) {
   $scope.enviarForm = function(chamado){
    
    // console.log($scope.chamado.htmlImagem);
- alert(imgEnviar);
-  alert();
+  alert(imgEnviar);
+
 
     $http({
         url: 'https://modulosamu.herokuapp.com/chamado/store',
