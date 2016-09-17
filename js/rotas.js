@@ -19,7 +19,9 @@ app.config(function($routeProvider) {
 
  app.controller('formularioChamado', function($scope, $http) {
 //----------------------------camera------------------------------------------
+ 
   var imgEnviar;
+function capturarImagem(){
   navigator.camera.getPicture(onSuccess, onFail,
   {
     destinationType : Camera.DestinationType.FILE_URI,
@@ -45,9 +47,10 @@ function onFail(message) {
         url: 'https://modulosamu.herokuapp.com/chamado/store',
         method: 'POST',
         data: {
-          
-          'imagen': imgEnviar,
+
           'nome': $scope.chamado.nome,
+          'imagen': imgEnviar,
+         
           
         },
         headers: {
