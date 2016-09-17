@@ -26,7 +26,7 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input id="telefone" type="file" class="validate">
+            <input id="telefone" type="number" class="validate">
             <label for="telefone">Telefone</label>
           </div>
         </div>
@@ -43,7 +43,7 @@
             </tbody>
        </table> 
        <div >
-         <img id="htmlImagem"  class="responsive-img" ng-model="chamado.htmlImagem"/>
+         <img id="htmlImagem"  class="responsive-img" />
        </div>
        <button class="btn waves-effect waves-light red " type="submit" name="action" ng-click="enviarForm(chamado)" ng-disabled="!formChamado.$valid">Enviar
            <i class="material-icons right">send</i>

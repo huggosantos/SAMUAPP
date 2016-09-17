@@ -21,7 +21,7 @@ app.controller('helow', function($scope) {
 });
 
  app.controller('formularioChamado', function($scope, $http) {
-
+//----------------------------camera------------------------------------------
   var imgEnviar;
   function capturarImagem(){
      navigator.camera.getPicture(onSuccess, onFail,
@@ -33,18 +33,19 @@ app.controller('helow', function($scope) {
 }
 
 function onSuccess(imageData) {
-    var image = document.getElementById('htmlImagem');
+  var image = document.getElementById('htmlImagem');
   imgEnviar = image.src = "data:image/jpeg;base64," + imageData;
 }
 
 function onFail(message) {
     alert('Erro: ' + message);
 }
-  
+//---------------------------fim camera---------------------------------------
+
   $scope.enviarForm = function(chamado){
    
-    //console.log($scope.chamado.htmlImagem);
-
+   // console.log($scope.chamado.htmlImagem);
+ alert(imgEnviar);
 
     $http({
         url: 'https://modulosamu.herokuapp.com/chamado/store',
