@@ -32,7 +32,8 @@ app.config(function($routeProvider) {
 function onSuccess(imageData) {
 
   var image = document.getElementById('htmlImagem');
-  imgEnviar = image.src = "data:image/jpeg;base64," + imageData ;
+  image.src = "data:image/jpeg;base64," + imageData ;
+  alert(image);
 }
 
 function onFail(message) {
