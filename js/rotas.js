@@ -45,7 +45,7 @@ function onFail(message) {
   $scope.enviarForm = function(chamado){
    
    // console.log($scope.chamado.htmlImagem);
- alert(imgEnviar);
+ //alert(imgEnviar);
 
     $http({
         url: 'https://modulosamu.herokuapp.com/chamado/store',
@@ -53,7 +53,7 @@ function onFail(message) {
         data: {
           
           'imagen': imgEnviar,
-         
+          'nome': $scope.chamado.nome,
           
         },
         headers: {
@@ -72,7 +72,7 @@ function onFail(message) {
         $scope.error = true;
         
       }); 
-
+ alert(JSON.stringify(imgEnviar));
   }
   
     });
