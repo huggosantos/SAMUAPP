@@ -15,36 +15,15 @@ app.config(function($routeProvider) {
     //remove 300ms delay touch
     //FastClick.attach(document.body);
 });
-//----------------------------camera------------------------------------------
- var imgEnviar;
-function capturarImagem(){
-   navigator.camera.getPicture(onSuccess, onFail,
-                    {
-                        destinationType : Camera.DestinationType.DATA_URL,
-                        sourceType : Camera.PictureSourceType.CAMERA
-                    }
-                );
-            }
 
-            function onSuccess(imageURL) {
-                var image = document.getElementById('htmlImagem');
-                image.src = "data:image/jpeg;base64," + imageURL;
-                imgEnviar=image.src;
-                console.log(imgEnviar);
-                
-            }
 
-            function onFail(message) {
-                alert('Erro: ' + message);
-            }
-
-//---------------------------fim camera---------------------------------------
 
  app.controller('formularioChamado', function($scope, $http) {
 
 
   $scope.enviarForm = function(chamado){
-   
+   console.log(imgEnviar);
+   console.log( $scope.chamado.nome);
    // console.log($scope.chamado.htmlImagem);
 
     $http({

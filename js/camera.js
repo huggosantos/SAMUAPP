@@ -11,11 +11,12 @@ function capturarImagem(){
             function onSuccess(imageURL) {
                 var image = document.getElementById('htmlImagem');
                 image.src = "data:image/jpeg;base64," + imageURL;
-                imgEnviar=image.src;
-                console.log(imgEnviar);
+                imgEnviar = image.src;
+               // console.log(imgEnviar);
                 
             }
 
             function onFail(message) {
                 alert('Erro: ' + message);
             }
+
