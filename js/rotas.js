@@ -19,8 +19,7 @@ app.config(function($routeProvider) {
 
  app.controller('formularioChamado', function($scope, $http) {
 //----------------------------camera------------------------------------------
- 
-var imgEnviar;
+ var imgEnviar;
 function capturarImagem(){
    navigator.camera.getPicture(onSuccess, onFail,
                     {
@@ -41,6 +40,7 @@ function capturarImagem(){
             function onFail(message) {
                 alert('Erro: ' + message);
             }
+
 //---------------------------fim camera---------------------------------------
 
   $scope.enviarForm = function(chamado){
