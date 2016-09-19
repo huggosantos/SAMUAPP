@@ -15,9 +15,6 @@ app.config(function($routeProvider) {
     //remove 300ms delay touch
     //FastClick.attach(document.body);
 });
-
-
- app.controller('formularioChamado', function($scope, $http) {
 //----------------------------camera------------------------------------------
  var imgEnviar;
 function capturarImagem(){
@@ -42,6 +39,9 @@ function capturarImagem(){
             }
 
 //---------------------------fim camera---------------------------------------
+
+ app.controller('formularioChamado', function($scope, $http) {
+
 
   $scope.enviarForm = function(chamado){
    
