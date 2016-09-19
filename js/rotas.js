@@ -29,7 +29,7 @@ function capturarImagem(){
                     }
                 );
             }
-var imgEnviar;
+
             function onSuccess(imageURL) {
                 var image = document.getElementById('htmlImagem');
                 image.src = "data:image/jpeg;base64," + imageURL;
