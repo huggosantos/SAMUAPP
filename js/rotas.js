@@ -35,7 +35,8 @@ app.config(function($routeProvider) {
           'bairro': $scope.chamado.bairro,
           'cidade': $scope.chamado.cidade,
           'referencia': $scope.chamado.ref,
-          'imagen': imgEnviar,
+          'descricao': $scope.chamado.descricao,
+          'img': imgEnviar,
           'latitude': geolocalizacao.coords.latitude,
           'longitude': geolocalizacao.coords.longitude,
          
