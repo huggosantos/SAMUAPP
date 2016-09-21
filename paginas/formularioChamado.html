@@ -1,73 +1,83 @@
 <h5>Chamada Emerêncial</h5>
-   <div class="row" >
-      <form class="col s12" id="formChamado" name="formChamado" ng-submit="salveSubmit()">
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="nome" type="text" class="validate" ng-model="chamado.nome" ng-required="true">
-            <label for="nome">Nome</label>
-          </div>
-          <div class="input-field col s6">
-            <input id="sobrenome" type="text" class="validate" ng-model="chamado.sobrenome" ng-required="true">
-            <label for="sobrenome">Sobrenome</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <input  id="rua" type="text" class="validate" ng-model="chamado.rua">
-            <label for="rua">Rua</label>
-          </div>
-          <div class="input-field col s6">
-            <input  id="numero" type="text" class="validate" ng-model="chamado.numero">
-            <label for="numero">Número</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="bairro" type="text" class="validate" ng-model="chamado.bairro">
-            <label for="bairro">Bairro</label>
-          </div>
-         <div class="input-field col s6">
-            <input id="cidade" type="text" class="validate" ng-model="chamado.cidade">
-            <label for="cidade">Cidade</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col 12">
-            <input id="descricao" type="text" class="validate" ng-model="chamado.descricao">
-            <label for="descricao">Descrição</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col 12">
-            <input id="ref" type="text" class="validate" ng-model="chamado.ref">
-            <label for="ref">Ponto de Referência</label>
-          </div>
-        </div>
+<div class="row" >
+  <form class="col s12" id="formChamado" name="formChamado" ng-submit="salveSubmit()">
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="nome" type="text" class="validate" ng-model="chamado.nome" ng-required="true">
+        <label for="nome">Nome</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="sobrenome" type="text" class="validate" ng-model="chamado.sobrenome" ng-required="true">
+        <label for="sobrenome">Sobrenome</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input  id="rua" type="text" class="validate" ng-model="chamado.rua">
+        <label for="rua">Rua</label>
+      </div>
+      <div class="input-field col s6">
+        <input  id="numero" type="text" class="validate" ng-model="chamado.numero">
+        <label for="numero">Número</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="bairro" type="text" class="validate" ng-model="chamado.bairro">
+        <label for="bairro">Bairro</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="cidade" type="text" class="validate" ng-model="chamado.cidade">
+        <label for="cidade">Cidade</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="descricao" type="text" class="validate" ng-model="chamado.descricao">
+        <label for="descricao">Descrição</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="ref" type="text" class="validate" ng-model="chamado.ref">
+        <label for="ref">Ponto de Referência</label>
+      </div>
+    </div>
+    <div class="input-field col s12">
+      <select>
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+      <label>Materialize Select</label>
+    </div>
 
-        <span id="result"></span>
 
-        <table>  
-            <tbody>
-              <tr>
-                <td> Capturar imagem do Acidente</td>
-                <td> <a  onclick="capturarImagem();"  class="waves-effect waves-circle waves-red btn-floating secondary-content red"><i class="material-icons">photo</i></a>
-                </td>
-              </tr>
-               <tr>
-                <td> stop</td>
-                <td> <a  onclick="pararCaptura();"  class="waves-effect waves-circle waves-red btn-floating secondary-content red"><i class="material-icons">photo</i></a>
-                </td>
-              </tr>
-            </tbody>
-       </table> 
-       <div >
-         <img id="htmlImagem"  class="responsive-img"/>
-       </div>
-       <button class="btn waves-effect waves-light red " type="submit" name="action" ng-click="enviarForm(chamado)" ng-disabled="!formChamado.$valid">Enviar
-           <i class="material-icons right">send</i>
-       </button>
- 
-  </form>                   
+    <span id="result"></span>
+
+    <table>  
+      <tbody>
+        <tr>
+          <td> Capturar imagem do Acidente</td>
+          <td> <a  onclick="capturarImagem();"  class="waves-effect waves-circle waves-red btn-floating secondary-content red"><i class="material-icons">photo</i></a>
+          </td>
+        </tr>
+        <tr>
+          <td> stop</td>
+          <td> <a  onclick="pararCaptura();"  class="waves-effect waves-circle waves-red btn-floating secondary-content red"><i class="material-icons">photo</i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table> 
+    <div >
+     <img id="htmlImagem"  class="responsive-img"/>
+   </div>
+   <button class="btn red " type="submit" name="action" ng-click="enviarForm(chamado)" ng-disabled="!formChamado.$valid">Enviar
+     <i class="material-icons right">send</i>
+   </button>
+   
+ </form>                   
 </div>
 
-    
+
