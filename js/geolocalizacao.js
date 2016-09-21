@@ -1,5 +1,5 @@
 var watchID;
-
+var geolocalizacao;
         function iniciarCaptura(){
             watchID = navigator.geolocation.watchPosition(mostrarTela, fail, { timeout: 30000 });
         }
@@ -14,6 +14,7 @@ var watchID;
                       'Velocidade: '        + position.coords.speed             + '<br />' +
                       'Timestamp: '         + new Date(position.timestamp)      + '<br />';
 
+           geolocalizacao = position;
 
             var result = document.getElementById("result");
 
@@ -21,8 +22,7 @@ var watchID;
         }
 
         function fail(error){
-            alert('Error: ' + error.code);
-            alert('Error: ' + error.message);
+            alert('Ativar Localização do Aparelho ' + error.message);
         }
 
         function pararCaptura(){

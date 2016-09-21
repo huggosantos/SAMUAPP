@@ -11,8 +11,7 @@ function capturarImagem(){
             function onSuccess(imageURL) {
                 var image = document.getElementById('htmlImagem');
                 image.src = "data:image/jpeg;base64," + imageURL;
-                imgEnviar = image.src;
-               // console.log(imgEnviar);
+                var imgEnviar = JSON.stringify(imageURL); 
                 
             }
 

@@ -22,9 +22,7 @@ app.config(function($routeProvider) {
 
 
   $scope.enviarForm = function(chamado){
-   console.log(imgEnviar);
-   console.log( $scope.chamado.nome);
-   // console.log($scope.chamado.htmlImagem);
+  
 
     $http({
         url: 'https://modulosamu.herokuapp.com/chamado/store',
@@ -32,7 +30,14 @@ app.config(function($routeProvider) {
         data: {
 
           'nome': $scope.chamado.nome,
+          'sobrenome': $scope.chamado.sobrenome,
+          'rua': $scope.chamado.rua,
+          'bairro': $scope.chamado.bairro,
+          'cidade': $scope.chamado.cidade,
+          'referencia': $scope.chamado.ref,
           'imagen': imgEnviar,
+          'latitude': geolocalizacao.coords.latitude,
+          'longitude': geolocalizacao.coords.longitude,
          
           
         },
