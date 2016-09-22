@@ -42,7 +42,7 @@ app.controller('formularioChamado', function($scope, $http) {
       'cidade': $scope.chamado.cidade,
       'referencia': $scope.chamado.ref,
       'descricao': $scope.chamado.descricao,
-      'img': imgEnviar,
+      'img': "ts",
       'latitude': geolocalizacao.coords.latitude,
       'longitude': geolocalizacao.coords.longitude,
 
