@@ -3,16 +3,6 @@ p, h1, h2, h3{
 	font-family: sans-serif;
 }
 
-body{
-	background-color: #fff;
-}
-
-nav {
-	background-color: #9ccc65;
-}
-footer{
-	background-color: #9ccc65;
-}
 #texto{
 	margin-left: 3%;
 	margin-right: 3%;
@@ -20,7 +10,6 @@ footer{
 	color: #494949;
 }
 #texto2{
-	
 	text-align: center;
 	color: #494949;
 }
@@ -36,7 +25,7 @@ footer{
 	color: #494949;
 }
 #titulo{
-	margin-top: 1em;
+
 	font-size: 2em;
 	color: #212121;
 	font-weight: bold;
@@ -55,80 +44,12 @@ footer{
 #titulo3{
 	font-weight: bolder;
 	color: #fff;
-	margin-top: 10em;
+	margin-top: 5em;
 	margin-left: 2em;
 	position: absolute;
 	font-size:200%
-	
-
-}
-#center{
-align-self: center;
-}
-
-
-#divDinamica{
-	top:4rem;
-	position: relative;
 
 }
 
-#BarraFixa{
-	top:0rem;
-	z-index: 999;
-	position: fixed;
-}
-
-.sublinhado{
-	text-decoration: overline;
-}
-
-.pequeno{
-	font-size: 0.7rem;
-}
-
-.sublinhado2{
-	text-decoration: overline ;
-	font-weight: bolder;
-}
-
-#botao{
-	text-decoration:none; 
-}
-
-#menuDrop li:focus{
-	color:#000;
-	background-color: #FFCDD2;
-
-}
-
-#butoonEstilo{
-	text-decoration:none;
-	font-weight: bolder;
-}
-
-#butoonEstilo a:hover {
-	color:#26a69a;
-
-}
-
-.listFast li{
-	margin-top: 5%;
-
-}
-
-#imagens{
-	margin-left: 3%;
-    width: 20%;
-	height: 20%;
-	background-color: #F6A2AD;
-}  
-
-#teste{
-	margin-top: 1.50em;
-	background-color: #EE6E73;
-	height: 33.50em;
-	border-radius:25em 3em 25em; 
-}
 
 

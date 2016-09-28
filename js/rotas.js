@@ -20,16 +20,23 @@ app.config(function($routeProvider) {
     //FastClick.attach(document.body);
   });
 
+function toTop(){
+  $('html, body').animate({
+    scrollTop: 0
+  }, 800, 'linear');
+}
 
-
+app.controller('sobre', function($scope) {  
+  toTop();
+});
 
 app.controller('formularioChamado', function($scope, $http) {
 
  $scope.enviarForm = function(chamado){
   if(latitude==undefined){
-     Materialize.toast('Chamado não enviado !', 4000)
-     Materialize.toast('Ativar geolocalização !', 4000)
-  }else{
+   Materialize.toast('Chamado não enviado !', 4000)
+   Materialize.toast('Ativar geolocalização !', 4000)
+ }else{
    latitude=undefined;
    longitude=undefined;
    pararCaptura();

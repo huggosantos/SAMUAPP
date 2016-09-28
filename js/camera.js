@@ -17,10 +17,3 @@ function onSuccess(imageURL) {
            function onFail(message) {
             Materialize.toast('Câmera Fechada !', 3000)
         }
-/*
-var teste = "helow";
-  var encodedString = btoa(teste);
-console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
-var decodedString = atob(encodedString);
-console.log(decodedString); // Outputs: "Hello World!"
- */

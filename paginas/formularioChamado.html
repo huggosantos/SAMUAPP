@@ -1,32 +1,39 @@
-<h5>Chamada Emerêncial</h5>
+<h5 class="header center" id="titulo">Chamado Emergência</h5>
+<br>
 <div class="row" >
   <form class="col s12" id="formChamado" name="formChamado" ng-submit="salveSubmit()">
+     <label>Tipo de Chamado</label>
+    <p>
+      <input class="with-gap" name="group1" ng-model="chamado.acidente"  ng-value="false" type="radio" id="test3"  />
+      <label for="test3">Clínico</label>
+    </p>
+    <p>
+      <input class="with-gap" name="group1" ng-model="chamado.acidente" ng-value="true" type="radio" id="test4"  />
+      <label for="test4">Acidente</label>
+    </p>
+
     <div class="row">
-      <div class="input-field col s6">
+      <div class="input-field col s12">
         <input id="nome" type="text" class="validate" ng-model="chamado.nome" ng-required="true">
         <label for="nome">Nome</label>
       </div>
-      <div class="input-field col s6">
-        <input id="sobrenome" type="text" class="validate" ng-model="chamado.sobrenome" ng-required="true">
-        <label for="sobrenome">Sobrenome</label>
-      </div>
     </div>
-    <div class="row">
+    <div ng-show="!chamado.acidente" class="row">
       <div class="input-field col s6">
         <input  id="rua" type="text" class="validate" ng-model="chamado.rua">
         <label for="rua">Rua</label>
       </div>
-      <div class="input-field col s6">
+      <div ng-show="!chamado.acidente" class="input-field col s6">
         <input  id="numero" type="text" class="validate" ng-model="chamado.numero">
         <label for="numero">Número</label>
       </div>
     </div>
-    <div class="row">
+    <div ng-show="!chamado.acidente" class="row">
       <div class="input-field col s6">
         <input id="bairro" type="text" class="validate" ng-model="chamado.bairro">
         <label for="bairro">Bairro</label>
       </div>
-      <div class="input-field col s6">
+      <div ng-show="!chamado.acidente" class="input-field col s6">
         <input id="cidade" type="text" class="validate" ng-model="chamado.cidade">
         <label for="cidade">Cidade</label>
       </div>
@@ -43,22 +50,14 @@
         <label for="ref">Ponto de Referência</label>
       </div>
     </div>
-    <label>Tipo de Chamado</label>
-    <p>
-      <input class="with-gap" name="group1" ng-model="chamado.acidente"  ng-value="false" type="radio" id="test3"  />
-      <label for="test3">Clínico</label>
-    </p>
-    <p>
-      <input class="with-gap" name="group1" ng-model="chamado.acidente" ng-value="true" type="radio" id="test4"  />
-      <label for="test4">Acidente</label>
-    </p>
+   
     <span id="result"></span>
 
     <table>  
       <tbody>
         <tr>
           <td> Capturar imagem do Acidente</td>
-          <td><button  onclick="capturarImagem();" ng-disabled="!chamado.acidente" class=" waves-circle btn-floating secondary-content red"><i class="material-icons">photo</i></button>
+          <td><button  onclick="capturarImagem();" ng-disabled="!chamado.acidente" class=" waves-circle btn-floating secondary-content red"><i class="material-icons">photo_camera</i></button>
           </td>
         </tr>
         <tr>
@@ -72,8 +71,9 @@
       <img id="htmlImagem" ng-model="chamado.img" class="responsive-img"/>
     </div>
     
-  <button class="btn red" type="submit" name="action" ng-click="enviarForm(chamado)" >Enviar
+  <button class="btn red" type="submit" name="action" ng-click="enviarForm(chamado)" ng-disabled="!formChamado.$valid"><a href="#sobre">Enviar 
    <i class="material-icons right">send</i>
+   </a> 
  </button>
 
 </form>                   
