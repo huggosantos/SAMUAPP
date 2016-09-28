@@ -43,41 +43,40 @@
         <label for="ref">Ponto de Referência</label>
       </div>
     </div>
-    <div class="input-field col s12">
-        <select>
-        <option value="" disabled selected>Choose your option</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </select>
-      <label>Materialize Select</label>
-    </div>
-
-
+    <label>Tipo de Chamado</label>
+    <p>
+      <input class="with-gap" name="group1" ng-model="chamado.acidente"  ng-value="false" type="radio" id="test3"  />
+      <label for="test3">Clínico</label>
+    </p>
+    <p>
+      <input class="with-gap" name="group1" ng-model="chamado.acidente" ng-value="true" type="radio" id="test4"  />
+      <label for="test4">Acidente</label>
+    </p>
     <span id="result"></span>
 
     <table>  
       <tbody>
         <tr>
           <td> Capturar imagem do Acidente</td>
-          <td> <a  onclick="capturarImagem();"  class="waves-effect waves-circle waves-red btn-floating secondary-content red"><i class="material-icons">photo</i></a>
+          <td><button  onclick="capturarImagem();" ng-disabled="!chamado.acidente" class=" waves-circle btn-floating secondary-content red"><i class="material-icons">photo</i></button>
           </td>
         </tr>
         <tr>
-          <td> stop</td>
-          <td> <a  onclick="pararCaptura();"  class="waves-effect waves-circle waves-red btn-floating secondary-content red"><i class="material-icons">photo</i></a>
+          <td> ggasj</td>
+          <td> <a  onclick="iniciarCaptura();" class="waves-effect waves-circle waves-red btn-floating secondary-content red"><i class="material-icons">photo</i></a>
           </td>
         </tr>
       </tbody>
     </table> 
     <div >
-     <img id="htmlImagem"  class="responsive-img"/>
-   </div>
-   <button class="btn red " type="submit" name="action" ng-click="enviarForm(chamado)" ng-disabled="!formChamado.$valid">Enviar
-     <i class="material-icons right">send</i>
-   </button>
+      <img id="htmlImagem" ng-model="chamado.img" class="responsive-img"/>
+    </div>
+    
+  <button class="btn red" type="submit" name="action" ng-click="enviarForm(chamado)" >Enviar
+   <i class="material-icons right">send</i>
+ </button>
 
- </form>                   
+</form>                   
 </div>
 
 

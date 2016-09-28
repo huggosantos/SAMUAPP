@@ -22,30 +22,37 @@ app.config(function($routeProvider) {
 
 
 
+
 app.controller('formularioChamado', function($scope, $http) {
- $(document).ready(function() {
-  $('select').material_select();
-});
 
  $scope.enviarForm = function(chamado){
-
-
-  $http({
+  if(latitude==undefined){
+     Materialize.toast('Chamado não enviado !', 4000)
+     Materialize.toast('Ativar geolocalização !', 4000)
+  }else{
+   latitude=undefined;
+   longitude=undefined;
+   pararCaptura();
+   var value = window.localStorage.getItem("chave");
+   window.localStorage.removeItem("chave");
+   //console.log(latitude);
+   //var imgEnviar = JSON.stringify(value);
+   //alert(imgEnviar);
+   $http({
     url: 'https://modulosamu.herokuapp.com/chamado/store',
     method: 'POST',
     data: {
-
-      'nome': $scope.chamado.nome,
-      'sobrenome': $scope.chamado.sobrenome,
-      'rua': $scope.chamado.rua,
-      'bairro': $scope.chamado.bairro,
-      'cidade': $scope.chamado.cidade,
-      'referencia': $scope.chamado.ref,
-      'descricao': $scope.chamado.descricao,
-      'img': "ts",
-      'latitude': geolocalizacao.coords.latitude,
-      'longitude': geolocalizacao.coords.longitude,
-
+      //'nome': $scope.chamado.nome,
+      //'sobrenome': $scope.chamado.sobrenome,
+      //'rua': $scope.chamado.rua,
+      //'bairro': $scope.chamado.bairro,
+      //'cidade': $scope.chamado.cidade,
+      //'referencia': $scope.chamado.ref,
+      latitude: latitude,
+      longitude: longitude,
+      descricao: $scope.chamado.descricao,
+      img: value,
+      
 
     },
     headers: {
@@ -55,16 +62,17 @@ app.controller('formularioChamado', function($scope, $http) {
     }
 
   }).
-  success(function (data) {
+   success(function (data) {
     $scope.success = true;
-    alert(data);
+    //alert(data);
     $scope.user = {};
   }).
-  error(function (data) {
+   error(function (data) {
     $scope.error = true;
 
   }); 
-
+ }
 }
+
 
 });
