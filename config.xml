@@ -9,8 +9,7 @@
 </author>
 <content src="index.html" />
 <preference name="DisallowOverscroll" value="true" />
-<preference name="android-minSdkVersion" value="10" />
-<!-- Windows 10 (default): -->
+
 <preference name="windows-appx-target" value="uap" />
 <!-- Windows 8.1: -->
 <preference name="windows-appx-target" value="8.1-win" />
