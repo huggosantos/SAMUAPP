@@ -33,14 +33,16 @@ app.controller('sobre', function($scope) {
 app.controller('formularioChamado', function($scope, $http) {
 
  $scope.enviarForm = function(chamado){
+  
+  var value = window.localStorage.getItem("chave");console.log(value);
   if(latitude==undefined){
-   Materialize.toast('Chamado não enviado !', 4000)
-   Materialize.toast('Ativar geolocalização !', 4000)
+   Materialize.toast('Chamado não enviado, Ativar geolocalização !', 7000)
+ }if($scope.chamado.acidente==true && value==undefined){
+   Materialize.toast('Chamado não enviado, Enviar Foto !', 7000)
  }else{
    latitude=undefined;
    longitude=undefined;
    pararCaptura();
-   var value = window.localStorage.getItem("chave");
    window.localStorage.removeItem("chave");
    //console.log(latitude);
    //var imgEnviar = JSON.stringify(value);
@@ -71,7 +73,7 @@ app.controller('formularioChamado', function($scope, $http) {
   }).
    success(function (data) {
     $scope.success = true;
-    //alert(data);
+    alert(data);
     $scope.user = {};
   }).
    error(function (data) {
