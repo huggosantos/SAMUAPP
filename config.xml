@@ -16,7 +16,6 @@
 <!-- Windows Phone 8.1: -->
 <preference name="windows-appx-target" value="8.1-phone" />
 
-<
 <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />
 
 <plugin name="cordova-plugin-geolocation" source="npm" spec="~2.1.0" />
