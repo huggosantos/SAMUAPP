@@ -51,18 +51,17 @@ app.controller('formularioChamado', function($scope, $http) {
     url: 'https://modulosamu.herokuapp.com/chamado/store',
     method: 'POST',
     data: {
-      //'nome': $scope.chamado.nome,
-      //'sobrenome': $scope.chamado.sobrenome,
-      //'rua': $scope.chamado.rua,
-      //'bairro': $scope.chamado.bairro,
-      //'cidade': $scope.chamado.cidade,
-      //'referencia': $scope.chamado.ref,
+      nome: $scope.chamado.nome,
+      rua: $scope.chamado.rua,
+      bairro: $scope.chamado.bairro,
+      cidade: $scope.chamado.cidade,
+      ref: $scope.chamado.ref,
+      clinico: $scope.chamado.tipo,
       latitude: latitude,
       longitude: longitude,
       descricao: $scope.chamado.descricao,
       img: value,
       
-
     },
     headers: {
       'Accept': 'application/json',
