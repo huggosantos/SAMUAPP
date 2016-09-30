@@ -31,6 +31,7 @@ app.controller('sobre', function($scope) {
 });
 
 app.controller('formularioChamado', function($scope, $http, $routeParams, $location) {
+ iniciarCaptura();
  toTop();
  $scope.enviarForm = function(chamado){
  var value = window.localStorage.getItem("chave");
