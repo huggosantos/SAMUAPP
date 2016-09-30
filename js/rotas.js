@@ -31,7 +31,7 @@ app.controller('sobre', function($scope) {
 });
 
 app.controller('formularioChamado', function($scope, $http) {
-
+ toTop();
  $scope.enviarForm = function(chamado){
   
   var value = window.localStorage.getItem("chave");console.log(value);
@@ -42,14 +42,12 @@ app.controller('formularioChamado', function($scope, $http) {
  }else{
    pararCaptura();
    window.localStorage.removeItem("chave");
-   //console.log(latitude);
-   //var imgEnviar = JSON.stringify(value);
-   //alert(imgEnviar);
    $http({
     url: 'https://modulosamu.herokuapp.com/chamado/store',
     method: 'POST',
     data: {
       nome: $scope.chamado.nome,
+      numero: $scope.chamado.numero,
       rua: $scope.chamado.rua,
       bairro: $scope.chamado.bairro,
       cidade: $scope.chamado.cidade,
@@ -59,7 +57,7 @@ app.controller('formularioChamado', function($scope, $http) {
       longitude: longitude,
       descricao: $scope.chamado.descricao,
       img: value,
-      
+
     },
     headers: {
       'Accept': 'application/json',
