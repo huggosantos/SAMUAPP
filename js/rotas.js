@@ -11,9 +11,9 @@ app.config(function($routeProvider) {
     templateUrl: 'paginas/sobre.html',
     controller: 'sobre'
   })
-  .otherwise('/home', {
-   templateUrl: 'templates/home.html',
-   controller: 'home'
+  .otherwise('/formularioChamado', {
+   templateUrl: 'templates/formularioChamado.html',
+   controller: 'formularioChamado'
  });
 }).run(function() {
     //remove 300ms delay touch
