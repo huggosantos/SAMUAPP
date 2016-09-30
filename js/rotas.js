@@ -30,16 +30,19 @@ app.controller('sobre', function($scope) {
   toTop();
 });
 
-app.controller('formularioChamado', function($scope, $http) {
+app.controller('formularioChamado', function($scope, $http, $routeParams, $location) {
  toTop();
  $scope.enviarForm = function(chamado){
-  
-  var value = window.localStorage.getItem("chave");console.log(value);
+ var value = window.localStorage.getItem("chave");
+  console.log(value);
   if(latitude==undefined){
    Materialize.toast('Chamado não enviado, Ativar geolocalização !', 7000)
- }if($scope.chamado.acidente==true && value==undefined){
+ }
+ else if($scope.chamado.tipo==true && value==undefined){
    Materialize.toast('Chamado não enviado, Enviar Foto !', 7000)
  }else{
+  
+   console.log(value);
    pararCaptura();
    window.localStorage.removeItem("chave");
    $http({
@@ -69,6 +72,9 @@ app.controller('formularioChamado', function($scope, $http) {
    success(function (data) {
     $scope.success = true;
     alert(data);
+    latitude=undefined;
+    longitude=undefined;
+    $location.path("/sobre");
     $scope.user = {};
   }).
    error(function (data) {
