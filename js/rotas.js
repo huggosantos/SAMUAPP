@@ -56,7 +56,7 @@ app.controller('formularioChamado', function($scope, $http) {
       bairro: $scope.chamado.bairro,
       cidade: $scope.chamado.cidade,
       ref: $scope.chamado.ref,
-      clinico: $scope.chamado.tipo,
+      clinico: true,
       latitude: latitude,
       longitude: longitude,
       descricao: $scope.chamado.descricao,
