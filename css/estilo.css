@@ -2,6 +2,8 @@
 p, h1, h2, h3{
 	font-family: sans-serif;
 }
+a{text-decoration: nome;
+color:#fff;}
 
 #texto{
 	margin-left: 3%;
@@ -25,7 +27,6 @@ p, h1, h2, h3{
 	color: #494949;
 }
 #titulo{
-
 	font-size: 2em;
 	color: #212121;
 	font-weight: bold;
@@ -39,7 +40,6 @@ p, h1, h2, h3{
 }
 #titulo2{
 	color: #212121;
-
 }
 #titulo3{
 	font-weight: bolder;
@@ -48,8 +48,6 @@ p, h1, h2, h3{
 	margin-left: 2em;
 	position: absolute;
 	font-size:200%
+	
 
 }
-
-
-

@@ -18,22 +18,22 @@
         <label for="nome">Nome</label>
       </div>
     </div>
-    <div ng-show="!chamado.tipo" class="row">
+    <div ng-if="!chamado.tipo" class="row">
       <div class="input-field col s6">
         <input  id="rua" type="text" class="validate" ng-model="chamado.rua" ng-required="true">
         <label for="rua">Rua</label>
       </div>
-      <div ng-show="!chamado.tipo" class="input-field col s6">
+      <div ng-if="!chamado.tipo" class="input-field col s6">
         <input  id="numero" type="number" class="validate" ng-model="chamado.numero" ng-required="true">
         <label for="numero">Número</label>
       </div>
     </div>
-    <div ng-show="!chamado.tipo" class="row">
+    <div ng-if="!chamado.tipo" class="row">
       <div class="input-field col s6">
         <input id="bairro" type="text" class="validate" ng-model="chamado.bairro" ng-required="true">
         <label for="bairro">Bairro</label>
       </div>
-      <div ng-show="!chamado.tipo" class="input-field col s6">
+      <div ng-if="!chamado.tipo" class="input-field col s6">
         <input id="cidade" type="text" class="validate" ng-model="chamado.cidade" ng-required="true">
         <label for="cidade">Cidade</label>
       </div>
@@ -61,7 +61,7 @@
       </tbody>
     </table> 
     
-  <button class="btn red" type="submit" name="action" ng-click="enviarForm(chamado)" ng-disabled="!formChamado.$valid"><a href="#sobre">Enviar 
+  <button class="btn red" type="submit" name="action" ng-click="enviarForm(chamado)" ng-disabled="!formChamado.$valid"><a >Enviar 
    <i class="material-icons right">send</i>
    </a> 
  </button>
