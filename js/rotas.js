@@ -40,8 +40,6 @@ app.controller('formularioChamado', function($scope, $http) {
  }if($scope.chamado.acidente==true && value==undefined){
    Materialize.toast('Chamado não enviado, Enviar Foto !', 7000)
  }else{
-   latitude=undefined;
-   longitude=undefined;
    pararCaptura();
    window.localStorage.removeItem("chave");
    //console.log(latitude);
