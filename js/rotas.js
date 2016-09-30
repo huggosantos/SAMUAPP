@@ -52,7 +52,7 @@ app.controller('formularioChamado', function($scope, $http) {
       bairro: $scope.chamado.bairro,
       cidade: $scope.chamado.cidade,
       ref: $scope.chamado.ref,
-      clinico: true,
+      clinico: $scope.chamado.tipo,
       latitude: latitude,
       longitude: longitude,
       descricao: $scope.chamado.descricao,
