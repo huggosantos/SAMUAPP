@@ -50,6 +50,18 @@
         <label for="ref">Ponto de Referência</label>
       </div>
     </div>
+     <p>
+      <input type="checkbox" id="test5" ng-model="c.true" ng-value="true"/>
+      <label for="test5">Red</label>
+    </p>
+     <p>
+      <input name="group1" type="radio" id="test1"  ng-disabled="!c.true" />
+      <label for="test1">Red</label>
+    </p>
+    <p>
+      <input name="group1" type="radio" id="test2"  ng-disabled="!c.true"/>
+      <label for="test2">Yellow</label>
+    </p>
    
     <table>  
       <tbody>
@@ -58,8 +70,14 @@
           <td><button  onclick="capturarImagem();" ng-disabled="!chamado.tipo" class=" waves-circle btn-floating secondary-content red"><i class="material-icons">photo_camera</i></button>
           </td>
         </tr>
+        <tr>
+          <td> Impressão</td>
+          <td><button  onclick="printSomeTestText();" ng-disabled="!chamado.tipo" class=" waves-circle btn-floating secondary-content red"><i class="material-icons">photo_camera</i></button>
+          </td>
+        </tr>
       </tbody>
     </table> 
+
     
   <button class="btn red" type="submit" name="action" ng-click="enviarForm(chamado)" ng-disabled="!formChamado.$valid"><a>Enviar 
    <i class="material-icons right">send</i>
