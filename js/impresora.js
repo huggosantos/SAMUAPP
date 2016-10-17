@@ -59,3 +59,9 @@ function printMyBarcode() {
     }
   );
 }
+
+window.broadcaster.addEventListener( "DatecsPrinter.connectionStatus", function(e) {
+  if (e.isConnected) {
+    alert('connect impress');
+  }
+});
