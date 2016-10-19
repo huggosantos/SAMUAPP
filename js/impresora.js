@@ -11,8 +11,8 @@ window.DatecsPrinter.listBluetoothDevices(
 
 }
 function printSomeTestText() {
-  console.log("TestPrin");
-  window.DatecsPrinter.printText("Print Test!",'ISO-8859-1', 
+  alert("TestPrin");
+  window.DatecsPrinter.printText("IMPRIMI POHHA",'ISO-8859-1', 
     function() {
       printMyImage();
     }
@@ -38,7 +38,7 @@ function imprimirImagenDePrueba()
 function printMyImage() {
   console.log("teste2");
   var image = new Image();
-  image.src = 'img/some_image.jpg';
+  image.src = 'img/logo.png';
   image.onload = function() {
     var canvas = document.createElement('canvas');
     canvas.height = 100;
