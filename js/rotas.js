@@ -11,9 +11,9 @@ app.config(function($routeProvider) {
     templateUrl: 'paginas/sobre.html',
     controller: 'sobre'
   })
-  .otherwise('/formularioChamado', {
-   templateUrl: 'templates/formularioChamado.html',
-   controller: 'formularioChamado'
+  .otherwise('/home', {
+   templateUrl: 'templates/home.html',
+   controller: 'home'
  });
 }).run(function() {
     //remove 300ms delay touch
@@ -30,7 +30,17 @@ app.controller('sobre', function($scope) {
   toTop();
 });
 
+app.elememt(document).ready(function(){
+    alert("entrei");
+    window.broadcaster.addEventListener( "DatecsPrinter.connectionStatus", function(e) {
+      if (e.isConnected) {
+        alert('connect impress');
+      }
+    }); } );
+
+
 app.controller('formularioChamado', function($scope, $http, $routeParams, $location) {
+  
  toTop();
  $scope.enviarForm = function(chamado){
  var value = window.localStorage.getItem("chave");
