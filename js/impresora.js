@@ -2,7 +2,7 @@ function imprimirFactura()
 {
 window.DatecsPrinter.listBluetoothDevices(
   function (devices) {
-  window.DatecsPrinter.connect(devices[0].address,printMyImage);
+  window.DatecsPrinter.connect(devices[0].address,printSomeTestText);
   },
   function (error) {
     swal(JSON.stringify(error));
