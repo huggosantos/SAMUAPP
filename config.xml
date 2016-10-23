@@ -11,8 +11,9 @@
     <preference name="DisallowOverscroll" value="true" />
 
     <preference name="android-minSdkVersion" value="15" />
-    <preference name="android-versionCode" value="15" />
-    <preference name="android-build-tool" value="15" />
+    <preference name="cdvVersionCode" value="15" />
+    <preference name="cdvMinSdkVersion" value="15" />
+    
 
 
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
